@@ -18,6 +18,8 @@ window.addEventListener("scroll", () => {
     }
   });
 
+  if (current === "collaboration-map") current = "about";
+
   navLinks.forEach(link => {
     link.classList.remove("active");
     if (link.getAttribute("href") === "#" + current) {

@@ -9,6 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 </head>
 <body>
   <!-- TOP HEADER -->
@@ -63,23 +66,55 @@
   <!-- ABOUT -->
   <section id="about" class="about">
     <div class="container about-grid">
-      <div class="about-text" data-aos="fade-right">
+      <div class="about-text">
         <h2>Empowering health equity</h2>
         <h3>Research and advocacy for all</h3>
-        <p>
+        <p data-aos="fade-right">
           At Health Equity and NTDs Research Institute, Ghana, we are dedicated
           to advancing population health and health equity across communities.
           Our focus on neglected tropical diseases (NTDs) aligns with the
           Sustainable Development Goals (SDGs), driving initiatives that safeguard
           the wellbeing of individuals and families.
         </p>
-        <a href="#contact" class="btn-outline">Get in touch</a>
+        <a href="#contact" class="btn-outline" data-aos="fade-right">Get in touch</a>
       </div>
       <div class="about-img" data-aos="fade-left">
         <img src="assets/about/Screenshot 2025-09-14 195731.png" alt="Researcher with microscope">
       </div>
     </div>
   </section>
+
+<!-- MAP -->
+ <section id="collaboration-map" class="map-section">
+  <div class="container">
+    <h2 class="map-title">Collaborations and Research Areas</h2>
+    <div class="map-card" data-aos="fade-up">
+      <div id="map"></div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  const map = L.map('map').setView([8, 20], 3);
+
+  // Tambahkan tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Contoh titik kolaborasi
+  const collaborations = [
+    { name: "Ghana", coords: [7.9465, -1.0232] }
+  ];
+
+  collaborations.forEach(c => {
+    L.circleMarker(c.coords, { radius: 6, color: "#007BFF" })
+      .bindPopup(`<b>${c.name}</b>`)
+      .addTo(map);
+  });
+</script>
+
 
   <!-- SERVICES -->
   <section id="services" class="services">

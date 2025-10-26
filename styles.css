@@ -186,14 +186,14 @@ img, video {
 
 
 /* ABOUT */
-.about { background:#e1e1e1; padding: 4rem 0; }
+.about { background: #eae7e6;; padding: 4rem 0; }
 .about-grid {
   display: grid;
   grid-template-columns: 1.8fr 1fr;
   gap: 2rem;
   align-items: center;
 }
-.about-text h2 { color: #00695C; font-size: 2.2rem; margin-bottom: 1rem; }
+.about-text h2 { color: #00695C; font-size: 2.2rem; margin-bottom: 0.5rem }
 .about-text h3 { margin-bottom: 1rem; font-size: 1.5rem; }
 .about-text p { margin-bottom: 1.5rem; font-size: 1.2rem;; }
 .about-img img { width: 80%; border-radius: 8px;}
@@ -201,6 +201,60 @@ img, video {
   display: flex;
   justify-content: center; /* center horizontally */
   align-items: center;     /* center vertically */
+}
+
+/* ==== MAP SECTION (letakkan di akhir CSS) ==== */
+
+/* offset aman saat klik anchor biar gak ketutup navbar sticky */
+section { scroll-margin-top: 80px; } /* sesuaikan kalau tinggi navbar beda */
+
+/* bungkus section map */
+.map-section {
+  position: relative;        /* agar z-index berfungsi */
+  z-index: 1;                /* pastikan di atas hero-video (yang -1) */
+  background: #e1e1e1;       /* senada sama tema */
+  padding: 5rem 0;           /* ruang atas-bawah */
+}
+
+/* header judul map */
+.map-title {
+  margin: 0 0 1rem 0;
+  color: #00695C;            /* hijau temamu */
+  font-weight: 800;
+  font-size: clamp(1.4rem, 2vw + 1rem, 2.2rem);
+  line-height: 1.2;
+}
+
+/* kartu pembungkus supaya map gak “nempel” ke tepi */
+.map-card {
+  background: #fff;
+  border-radius: 16px;
+  /* box-shadow: 0 10px 28px rgba(0,0,0,.08); */
+  overflow: hidden;          /* radius nempel ke map */
+}
+
+/* ukuran map responsif */
+#map {
+  inline-size: 100%;
+  block-size: clamp(320px, 50vh, 560px);  /* tinggi fleksibel */
+}
+
+/* Leaflet fixes: pastikan kontrol terlihat & font konsisten */
+.leaflet-container { 
+  z-index: 0; 
+  font-family: inherit; 
+}
+.leaflet-control-container .leaflet-top,
+.leaflet-control-container .leaflet-bottom { z-index: 401; }
+
+/* jarak antar section biar rapi menyatu dengan Services & About */
+.services { margin-bottom: 0; } /* hapus gap bawah berlebih jika ada */
+.about { margin-top: 0; }       /* rapikan transisi ke about */
+
+@media (max-width: 768px) {
+  .map-section { padding: 2rem 0; }
+  .map-card { border-radius: 12px; }
+  .map-title { text-align: center; }
 }
 
 
