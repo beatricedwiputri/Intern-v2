@@ -50,6 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (href === currentPage || (currentPage === "" && href === "index.html")) {
       link.classList.add("active");
     }
+
+    if (currentPage.startsWith("team-godwin.html") && href.includes("team")) {
+      link.classList.add("active");
+    }
   });
 });
 
