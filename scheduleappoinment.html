@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0, user-scalable=no">
+  <title>Health Equity and NTDs Research Institute, Ghana</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <!-- TOP HEADER -->
+  <div class="topbar">
+    <div class="container">
+        <div class="logo">
+            <span>Health Equity and NTDs Research Institute, Ghana</span>
+        </div>
+        <div class="email">
+            <a href="mailto:henrighana@outlook.com" class="email">
+        <span class="icon">✉</span> henrighana@outlook.com
+      </a>
+        </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container">
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#team">Team</a></li>
+          <li><a href="index.html#events">Events</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+ <!-- SCHEDULE FORM -->
+  <section class="schedule">
+    <div class="container">
+      <h2 data-aos="fade-up">Meeting Request Form</h2>
+      <h3 data-aos="fade-up" data-aos-delay="200">We look forward to meeting with you</h3>
+
+      <form class="schedule-form" data-aos="fade-up" data-aos-delay="400">
+        <label for="date">Preferred Date <span class="required">*</span></label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Preferred Time <span class="required">*</span></label>
+        <input type="time" id="time" name="time" required>
+
+        <label for="name">Full Name <span class="required">*</span></label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+
+        <label for="email">Email Address <span class="required">*</span></label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="phone">Phone Number <span class="required">*</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="+233 xxx xxx xxx" required>
+
+        <label>Service of Interest <span class="required">*</span></label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="service" value="population"> Population health research</label>
+          <label><input type="checkbox" name="service" value="policy"> Policy advocacy</label>
+          <label><input type="checkbox" name="service" value="ntds"> Support for neglected tropical diseases (NTDs)</label>
+        </div>
+
+        <label for="message">Message / Notes</label>
+        <textarea id="message" name="message" rows="4" placeholder="Tell us more..."></textarea>
+
+        <button type="submit" class="btn btn-primary">SUBMIT</button>
+      </form>
+    </div>
+  </section> 
+
+<!-- Footer -->
+<footer class="footer-team">
+  <div class="container">
+    <p>Health Equity and NTDs Research Institute, Ghana</p>
+    <ul class="footer-links">
+      <li><a href="scheduleappoinment.html">Schedule appoinment</a></li>
+      <li><a href="completeintake.html">Complete intake</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+    </ul>
+  </div>
+</footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,  /* animation duration */
+      once: true       /* run only once per element */
+    });
+  </script>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
