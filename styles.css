@@ -186,25 +186,97 @@ img, video {
 
 
 /* ABOUT */
-.about { background: #eae7e6;; padding: 4rem 0; }
+.about { background: #e1e1e1;; padding: 4rem 0; }
 .about-grid {
   display: grid;
   grid-template-columns: 1.8fr 1fr;
   gap: 2rem;
   align-items: center;
 }
-.about-text h2 { color: #00695C; font-size: 2.2rem; margin-bottom: 0.5rem }
-.about-text h3 { margin-bottom: 1rem; font-size: 1.5rem; }
+.about-text h2 { color: #00695C; font-size: 2.5rem; margin-bottom: 0.5rem }
+.about-text h3 { margin-bottom: 2rem; font-size: 1.8rem; }
 .about-text p { margin-bottom: 1.5rem; font-size: 1.2rem;; }
-.about-img img { width: 80%; border-radius: 8px;}
+.about-img img { width: 85%; border-radius: 8px;}
 .about-img {
   display: flex;
-  justify-content: center; /* center horizontally */
-  align-items: center;     /* center vertically */
+  justify-content: center; 
+  align-items: center;     
 }
 
-/* ==== MAP SECTION (letakkan di akhir CSS) ==== */
+.next-section-text {
+  margin-top: 2rem;
+}
 
+
+/* STATS SECTION */
+.stats-section {
+  background: #eae7e6;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.stats-section h2 {
+  color: #00695C;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-intro {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 2.5rem 1.8rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  color: #f57c00;
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.stat-card p {
+  color: #333;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .stat-card {
+    padding: 1.8rem;
+  }
+}
+
+
+
+
+/* ==== MAP SECTION (letakkan di akhir CSS) ==== */
 /* offset aman saat klik anchor biar gak ketutup navbar sticky */
 section { scroll-margin-top: 80px; } /* sesuaikan kalau tinggi navbar beda */
 
