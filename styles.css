@@ -290,10 +290,15 @@ section { scroll-margin-top: 80px; } /* sesuaikan kalau tinggi navbar beda */
 
 /* header judul map */
 .container h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.3rem;
   color: #00695C;            /* hijau temamu */
   font-weight: 800;
   font-size: 2rem;
+}
+
+.container h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
 }
 
 /* kartu pembungkus supaya map gak “nempel” ke tepi */
