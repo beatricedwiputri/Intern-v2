@@ -57,6 +57,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentPage.startsWith("team-godwin.html") && href.includes("team")) {
       link.classList.add("active");
     }
+
+    if (currentPage.startsWith("service-NTDs.html") && href.includes("services")) {
+      link.classList.add("active");
+    }
+     if (currentPage.startsWith("service-PA.html") && href.includes("services")) {
+      link.classList.add("active");
+    }
+     if (currentPage.startsWith("service-PHR.html") && href.includes("services")) {
+      link.classList.add("active");
+    }
   });
 });
 

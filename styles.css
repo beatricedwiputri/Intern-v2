@@ -388,7 +388,7 @@ section { scroll-margin-top: 80px; } /* sesuaikan kalau tinggi navbar beda */
 
 
 /* CONTACT */
-.contact { padding: 4rem 0; background: #e1e1e1;}
+.contact { padding: 4rem 0; background: #efeeec;}
 .contact-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -448,7 +448,7 @@ form button:hover {
 
 /* CONTACT INFO */
 .contact-info {
-  background: #ddd ;
+  background: #eae7e6 ;
   padding: 2.5rem;
   border-radius: 6px;
   align-self: center;
