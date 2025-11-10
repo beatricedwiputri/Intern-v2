@@ -68,12 +68,12 @@
     <div class="container about-grid">
       <div class="about-text">
         <h2>Why We Exist?</h2>
-        <h3>Toward equitable healthcare for all Ghanaians</h3>
+        <h3>Toward equitable healthcare for all communities in Ghana</h3>
         <p data-aos="fade-right">
           In Ghana, many communities still face barriers to quality healthcare, from limited access to trained professionals, to unequal distribution of health resources, and the persistent burden of neglected tropical diseases (NTDs).
         </p>
         <p data-aos="fade-right" data-aos-delay="200">
-          The Health Equity and NTDs Research Institute, Ghana was founded to contribute in addressing these inequity through research, education, and collaboration. Our mission is to advocate for and promote fair and accessible health systems that reach even the most underserved and unserved populations.
+          The Health Equity and NTDs Research Institute, Ghana was founded to contribute in addressing these inequity through research, education, and collaboration. <strong>Our mission is to advocate for and promote fair and accessible health systems that reach even the most underserved and unserved populations.</strong>
        </p>
        <p class="next-section-text" data-aos="fade-in" >Explore our ongoing initiatives :</p>
         <a href="#services" class="btn-outline" data-aos="fade-in">Focus Areas</a>
@@ -122,6 +122,9 @@
   <div class="container">
     <h2>Collaborations and Research Areas</h2>
     <h3>Mapping our collaborations and research initiatives across Ghana.</h3>
+    <p style="text-align:center; color:#000000; font-style:italic; margin-top:8px;">
+      💡 Hover over or click the dots to view each district’s NTD endemicity and research details.
+    </p>
     <div class="map-card" data-aos="fade-up">
       <div id="map"></div>
     </div>
@@ -132,20 +135,99 @@
 <script>
   const map = L.map('map').setView([7.9465, -1.0232], 6);
 
-  // Tambahkan tile layer
+  // Tile layer
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
-  // Contoh titik kolaborasi
-  const collaborations = [
-    { name: "Ghana", coords: [7.9465, -1.0232] }
+  // Research areas based on your table
+  const researchSites = [
+    {
+      region: "Savannah",
+      district: "Bole",
+      coords: [9.0333, -2.3833],
+      endemicity: "Lymphatic Filariasis, Onchocerciasis, Soil-Transmitted Helminths, Schistosomiasis",
+      remarks: "Jama sub-district has high prevalence in Lymphatic Filariasis, Onchocerciasis, and Schistosomiasis"
+    },
+    {
+      region: "Bono",
+      district: "Wenchi",
+      coords: [7.7333, -2.1],
+      endemicity: "Lymphatic Filariasis, Onchocerciasis, Soil-Transmitted Helminths, Schistosomiasis",
+      remarks: "Asuogya sub-district (Lymphatic Filariasis); Subinso sub-district (Onchocerciasis)"
+    },
+    {
+      region: "Western",
+      district: "Wassa East",
+      coords: [5.5, -1.65],
+      endemicity: "Lymphatic Filariasis, Onchocerciasis, Soil-Transmitted Helminths, Schistosomiasis",
+      remarks: "Bosomae area – Lymphatic Filariasis transmission interrupted; Onchocerciasis transmission ongoing"
+    },
+    {
+      region: "Greater Accra",
+      district: "Ga East",
+      coords: [5.6833, -0.15],
+      endemicity: "Lymphatic Filariasis, Onchocerciasis, Soil-Transmitted Helminths, Schistosomiasis",
+      remarks: "Burger Town – Lymphatic Filariasis transmission interrupted; Onchocerciasis detected; intervention started Jan 2024"
+    },
+    {
+      region: "Greater Accra",
+      district: "Ga South",
+      coords: [5.5333, -0.3333],
+      endemicity: "Lymphatic Filariasis, Soil-Transmitted Helminths, Schistosomiasis",
+      remarks: "Adakope & Weija Lake communities – high Schistosomiasis prevalence; Lymphatic Filariasis transmission interrupted"
+    },
+    {
+      region: "Eastern",
+      district: "Asuogyaman",
+      coords: [6.25, 0.05],
+      endemicity: "Soil-Transmitted Helminths, Schistosomiasis",
+      remarks: "High Schistosomiasis prevalence in communities along the Volta Lake"
+    },
+    {
+      region: "Oti",
+      district: "Nkwanta South",
+      coords: [7.5167, 0.4667],
+      endemicity: "Onchocerciasis, Soil-Transmitted Helminths, Schistosomiasis",
+      remarks: "High Schistosomiasis prevalence in communities along the Oti River"
+    },
+    {
+      region: "Oti",
+      district: "Nkwanta North",
+      coords: [7.8333, 0.25],
+      endemicity: "Onchocerciasis, Soil-Transmitted Helminths, Schistosomiasis",
+      remarks: "High Schistosomiasis prevalence in communities along the Oti River"
+    },
+    {
+      region: "Oti",
+      district: "KadjeBi",
+      coords: [7.7333, 0.4667],
+      endemicity: "Onchocerciasis, Soil-Transmitted Helminths, Schistosomiasis",
+      remarks: "Onchocerciasis prevalence high along the Asukawkaw and Waawaa rivers"
+    }
   ];
 
-  collaborations.forEach(c => {
-    L.circleMarker(c.coords, { radius: 6, color: "#007BFF" })
-      .bindPopup(`<b>${c.name}</b>`)
-      .addTo(map);
+  // Add markers
+  researchSites.forEach(site => {
+    const marker = L.circleMarker(site.coords, {
+      radius: 7,
+      color: "#007BFF",
+      fillColor: "#007BFF",
+      fillOpacity: 0.8
+    }).addTo(map);
+
+    // Tooltip (hover)
+    marker.bindTooltip(`<b>${site.district}</b><br>${site.endemicity}`, {
+      permanent: false,
+      direction: "top"
+    });
+
+    // Popup (click)
+    marker.bindPopup(`
+      <b>${site.district}, ${site.region} Region</b><br>
+      <b>NTD Endemicity:</b> ${site.endemicity}<br>
+      <b>Remarks:</b> ${site.remarks}
+    `);
   });
 </script>
 
