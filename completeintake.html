@@ -80,9 +80,25 @@
           <label><input type="checkbox" name="support" value="Consultation"> Consultation</label>
           <label><input type="checkbox" name="support" value="Research Collaboration"> Research Collaboration</label>
           <label><input type="checkbox" name="support" value="Policy"> Policy Development</label>
-          <label><input type="checkbox" name="support" value="Funding"> Funding Opportunities</label>
           <label><input type="checkbox" name="support" value="Training"> Training and Workshops</label>
+          <label><input type="checkbox" id="others-checkbox" name="support" value="Others"> Others</label>
+          <input type="text" id="others-text" name="other_support" placeholder="Please specify..." style="display:none; margin-top:5px;">
         </div>
+
+        <script>
+          const othersCheckbox = document.getElementById("others-checkbox");
+          const othersText = document.getElementById("others-text");
+
+          othersCheckbox.addEventListener("change", function() {
+            if (this.checked) {
+              othersText.style.display = "block";
+              othersText.focus();
+            } else {
+              othersText.style.display = "none";
+              othersText.value = ""; // clear when unchecked
+            }
+          });
+        </script>
 
         <label for="organization">What is your organization type?<span class="required">*</span></label>
         <select id="organization" name="organization" required>

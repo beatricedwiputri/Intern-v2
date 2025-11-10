@@ -196,7 +196,7 @@ img, video {
 .about-text h2 { color: #00695C; font-size: 2.5rem; margin-bottom: 0.5rem }
 .about-text h3 { margin-bottom: 2rem; font-size: 1.8rem; }
 .about-text p { margin-bottom: 1.5rem; font-size: 1.2rem;; }
-.about-img img { width: 85%; border-radius: 8px;}
+.about-img img { width: 100%; border-radius: 8px;}
 .about-img {
   display: flex;
   justify-content: center; 
@@ -260,7 +260,9 @@ img, video {
 .stat-card p {
   color: #333;
   font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
+
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -828,7 +830,7 @@ h2 {
 
 /* Foto */
 .service2-card img {
-  width: 350px;
+  width: 400px;
   height: auto;
   border-radius: 12px;
   object-fit: scale-down;
@@ -850,7 +852,7 @@ h2 {
   line-height: 1.8;
   color: #555;
   text-align: justify;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 /* ===== Responsive: Mobile view ===== */
