@@ -405,6 +405,83 @@ section { scroll-margin-top: 80px; } /* sesuaikan kalau tinggi navbar beda */
 /* .contact-grid p {font-size: 1.2rem;} */
 
 
+/* FAQ Section */
+.faq {
+  background: #e1e1e1;
+  color: #00695C;
+  text-align: center;
+  padding: 6rem 4rem;
+}
+
+.faq h2 {
+  font-size: 2.2rem;
+}
+
+.faq p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: #212122;
+}
+
+/* FAQ Section HALAMAN BARU */
+.faq-page {
+  background-color: #eae7e6;
+}
+.faq-container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .faq-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      font-weight: bold;
+      color: #004d40;
+    }
+
+    .faq-item {
+      background: #ffffff7d;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      border-left: 5px solid #00695C;
+    }
+
+    .faq-question {
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .faq-answer {
+      margin-top: 10px;
+      display: none;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-item.active .faq-question::after {
+      content: "−";
+    }
+
+    .faq-question::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 1.4rem;
+      color: #00695C;
+    }
+
 /* FORM */
 form { 
   padding-top: 1rem;
@@ -779,7 +856,7 @@ form button:hover {
   padding: 6rem 4rem;
 }
 
-h2 {
+.cta h2 {
   font-size: 3rem;
 }
 
