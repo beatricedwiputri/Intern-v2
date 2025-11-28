@@ -1333,6 +1333,28 @@ form button:hover {
   cursor: pointer;
 }
 
+
+.intake-form {
+  max-width: 650px;
+  margin: auto;
+}
+
+.intake-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.intake-form input,
+.intake-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 0.3rem;
+  font-size: 1rem;
+}
+
 .intake-form select {
   width: 100%;
   padding: 0.8rem;
