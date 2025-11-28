@@ -80,14 +80,13 @@ document.querySelectorAll(".nav a").forEach(link => {
 });
 
 
+// Ganti URL ini dengan Apps Script Web App URL kamu
+const scriptURL = "https://script.google.com/macros/s/AKfycbzBJY5UCwiBwZ0dXWG8VIstrmLzITpuMH_fVXwiEo_UbrEJQYpepIQGZCbfQk0hiHQ_/exec";
 
 
 // ===========================
 // CONTACT FORM → GOOGLE SHEETS
 // ===========================
-
-// Ganti URL ini dengan Apps Script Web App URL kamu
-const scriptURL = "https://script.google.com/macros/s/AKfycbzBJY5UCwiBwZ0dXWG8VIstrmLzITpuMH_fVXwiEo_UbrEJQYpepIQGZCbfQk0hiHQ_/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.querySelector("#contact form");
