@@ -90,14 +90,14 @@ document.querySelectorAll(".nav a").forEach(link => {
 const scriptURL = "https://script.google.com/macros/s/AKfycbzBJY5UCwiBwZ0dXWG8VIstrmLzITpuMH_fVXwiEo_UbrEJQYpepIQGZCbfQk0hiHQ_/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("#contact form");
+  const contactForm = document.querySelector("#contact form");
 
-  if (!form) return; // safety check
+  if (!contactForm) return; // safety check
 
-  form.addEventListener("submit", async (e) => {
+  contactForm.addEventListener("submit", async (e) => {
     e.preventDefault(); // prevent page reload
 
-    const formData = new FormData(form);
+    const formData = new FormData(contactForm);
 
     try {
       const response = await fetch(scriptURL, {
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (response.ok) {
         alert("Thank you! Your message has been sent.");
-        form.reset();
+        contactForm.reset();
       } else {
         alert("Failed to send. Please try again.");
       }
@@ -116,4 +116,77 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// ===========================
+// MEETING REQUEST FORM → GOOGLE SHEETS (Schedule tab)
+// ===========================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const scheduleForm = document.querySelector(".schedule-form");
+  if (!scheduleForm) return; // kalau bukan di halaman schedule, skip
+
+  scheduleForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(scheduleForm);
+
+    // kasih penanda ke Apps Script bahwa ini form schedule
+    formData.append("formType", "schedule");
+
+    try {
+      await fetch(scriptURL, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors",
+      });
+
+      alert("Thank you! Your meeting request has been sent.");
+      scheduleForm.reset();
+      // optionally reset time dropdown:
+      const timeSelect = document.getElementById("time");
+      if (timeSelect) {
+        timeSelect.innerHTML = "<option value=''>Select a weekday first</option>";
+        timeSelect.disabled = true;
+      }
+    } catch (error) {
+      console.error("Schedule form submit error:", error);
+      alert("Something went wrong. Please try again.");
+    }
+  });
+});
+
+
+// ===========================
+// INTAKE FORM → GOOGLE SHEETS (Intake tab)
+// ===========================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const intakeForm = document.querySelector(".intake-form");
+  if (!intakeForm) return; // kalau bukan di halaman intake, skip
+
+  intakeForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(intakeForm);
+
+    // kasih penanda ke Apps Script bahwa ini form intake
+    formData.append("formType", "intake");
+
+    try {
+      await fetch(scriptURL, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors",
+      });
+
+      alert("Thank you! Your intake form has been submitted.");
+      intakeForm.reset();
+    } catch (error) {
+      console.error("Intake form submit error:", error);
+      alert("Something went wrong. Please try again.");
+    }
+  });
+});
+
+
 

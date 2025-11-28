@@ -1236,7 +1236,7 @@ form button:hover {
 }
 
 
-/* ===== SERVICE APPOINMENT PAGE ===== */
+/* ===== SERVICE APPOINMENT & INTAKE PAGE ===== */
 .schedule {
   padding: 4rem 1rem;
   background: #eae7e6;
@@ -1333,13 +1333,22 @@ form button:hover {
   cursor: pointer;
 }
 
-/* optional: hover/focus effects */
-.schedule-form select:focus {
-  outline: none;
-  border-color: #00695C;
-  box-shadow: 0 0 3px rgba(0, 105, 92, 0.3);
+.intake-form select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  background-color: white;
+  font-family: 'Nunito Sans', sans-serif;
+  appearance: none; /* remove browser’s default arrow styling */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%2300695C' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px;
+  cursor: pointer;
 }
-
 
 /* ----- MOBILE (<=768px) ----- */
 @media (max-width: 768px) {
