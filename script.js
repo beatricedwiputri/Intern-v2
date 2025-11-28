@@ -97,20 +97,19 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault(); // prevent page reload
 
     const formData = new FormData(contactForm);
+    formData.append("formType", "contact");
 
     try {
       const response = await fetch(scriptURL, {
         method: "POST",
-        body: formData
+        body: formData,
+        mode: "no-cors",
       });
 
-      if (response.ok) {
-        alert("Thank you! Your message has been sent.");
-        contactForm.reset();
-      } else {
-        alert("Failed to send. Please try again.");
-      }
+      alert("Thank you! Your message has been sent.");
+      contactForm.reset();
     } catch (error) {
+      console.error("Contact form submit error:", error);
       alert("Something went wrong. Please try again.");
     }
   });
