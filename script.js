@@ -82,4 +82,38 @@ document.querySelectorAll(".nav a").forEach(link => {
 
 
 
+// ===========================
+// CONTACT FORM → GOOGLE SHEETS
+// ===========================
+
+// Ganti URL ini dengan Apps Script Web App URL kamu
+const scriptURL = "https://script.google.com/macros/s/AKfycbzBJY5UCwiBwZ0dXWG8VIstrmLzITpuMH_fVXwiEo_UbrEJQYpepIQGZCbfQk0hiHQ_/exec";
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("#contact form");
+
+  if (!form) return; // safety check
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // prevent page reload
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        body: formData
+      });
+
+      if (response.ok) {
+        alert("Thank you! Your message has been sent.");
+        form.reset();
+      } else {
+        alert("Failed to send. Please try again.");
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+});
 
