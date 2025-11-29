@@ -81,7 +81,7 @@ document.querySelectorAll(".nav a").forEach(link => {
 
 
 // Ganti URL ini dengan Apps Script Web App URL kamu
-const scriptURL = "https://script.google.com/macros/s/AKfycbzBJY5UCwiBwZ0dXWG8VIstrmLzITpuMH_fVXwiEo_UbrEJQYpepIQGZCbfQk0hiHQ_/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbxSfU0juqEstkMvHz6sO5FCv0P93ucESAlwlJB07PGd5ulrVdHRY64JDFyKBFWMAzjOFg/exec";
 
 
 // ===========================
