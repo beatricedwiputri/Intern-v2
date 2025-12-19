@@ -975,7 +975,7 @@ form button:hover {
 /* Hero banner khusus news */
 .blog-hero {
   position: relative;
-  background: url("assets/blog/blog\ hero.png") center/cover no-repeat;
+  background: url("assets/blog/blog\ hero.jpg") center/cover no-repeat;
   background-attachment: fixed;
   height: 350px;
   display: flex;
@@ -1129,7 +1129,7 @@ form button:hover {
 /* Hero banner khusus news */
 .news-hero {
   position: relative;
-  background: url("assets/news/newshero.png") center/cover no-repeat;
+  background: url("assets/news/newshero.jpg") center/cover no-repeat;
   background-attachment: fixed;
   height: 350px;
   display: flex;
